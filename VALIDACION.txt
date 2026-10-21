@@ -1,0 +1,13 @@
+VALIDACIÓN DEL PAQUETE
+
+Python 3.12.
+Streamlit 1.66.1; NumPy 2.3.5; SciPy 1.17.0; pandas 2.2.3; Matplotlib 3.10.8.
+
+1. Motor: diez ejemplos; 80 modelos nuevos de máximo/mínimo comparados entre el simplex educativo y HiGHS.
+2. Se comprobó que las columnas básicas del tableau fueran identidad y que los lados derechos permanecieran no negativos.
+3. Casos de error: infactible, no acotado, entrada incompleta, NaN, matrices irregulares, transporte desbalanceado no autorizado y H=0.
+4. Interfaz con Streamlit AppTest: los diez ejemplos se cargaron y resolvieron sin excepciones; se generó práctica en cada uno de los seis módulos y se evaluaron respuestas correctas e incorrectas.
+5. Catálogo de diez ejemplos y pantalla Ayuda: sin excepciones.
+6. Comprobación de sintaxis de todos los archivos Python.
+
+Las pruebas de interfaz usaron AppTest; no son una revisión visual en un navegador real. No se ha publicado ni verificado una URL externa. El usuario debe completar sección, publicación, capturas e informe de entrega.
