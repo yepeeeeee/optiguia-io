@@ -1,4 +1,4 @@
-"""OPTIGUÍA IO: aplicación académica sin servicios de IA externos."""
+"""OPTIGUÍA IO: módulos matemáticos y chat Gemini opcional."""
 import itertools
 import random
 import numpy as np
@@ -11,6 +11,7 @@ from motor import (
     simplex, cumple, transporte, asignacion, inventario
 )
 from ejemplos import MODULOS, EJEMPLOS
+from asistente import pantalla_chat
 
 
 
@@ -1343,7 +1344,7 @@ def main():
 
         pagina = st.radio(
             "Navegación",
-            ["Resolver", "10 ejemplos", "Práctica", "Ayuda"],
+            ["Resolver", "Conversar", "10 ejemplos", "Práctica", "Ayuda"],
             label_visibility="collapsed"
         )
 
@@ -1360,6 +1361,8 @@ def main():
         st.caption("Optiguía · Herramientas de decisión")
 
     titulos = {
+        "Conversar": ("Asistente académico", "Conversemos sobre tu ejercicio.",
+                       "Pregunta, formula un problema y solicita una explicación paso a paso."),
         "Resolver": (
             "Espacio de trabajo",
             "Resuelve tu próximo problema.",
@@ -1401,6 +1404,10 @@ def main():
         unsafe_allow_html=True
     )
 
+    if pagina == "Conversar":
+        pantalla_chat()
+        return
+
     if pagina == "Ayuda":
         st.header("Cómo usar el asistente")
 
@@ -1414,7 +1421,8 @@ def main():
             "En modelación tú identificas los datos "
             "y describes las variables; el asistente construye "
             "su representación matemática. "
-            "No convierte automáticamente cualquier texto en ecuaciones."
+            "Para preguntas escritas y ayuda con enunciados usa Conversar. "
+            "La interpretación de Gemini debe revisarse antes de aceptar sus resultados."
         )
 
         st.write(
